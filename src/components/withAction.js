@@ -15,7 +15,7 @@ export default function WithAction() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} top="0" width="100%">
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -49,9 +49,35 @@ export default function WithAction() {
                   textDecoration: 'none',
                   bg: hoverBgColor,
                 }}
-                href={'/form'}
+                href={'/about-us'}
               >
-                Form
+                Quienes somos
+              </Box>
+              <Box
+                as="a"
+                px={2}
+                py={1}
+                rounded={'md'}
+                _hover={{
+                  textDecoration: 'none',
+                  bg: hoverBgColor,
+                }}
+                href={'/news'}
+              >
+                Noticias
+              </Box>
+              <Box
+                as="a"
+                px={2}
+                py={1}
+                rounded={'md'}
+                _hover={{
+                  textDecoration: 'none',
+                  bg: hoverBgColor,
+                }}
+                href={'/health'}
+              >
+                Salud
               </Box>
             </HStack>
           </HStack>
