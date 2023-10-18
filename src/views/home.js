@@ -80,6 +80,80 @@ function Home() {
               </Text>
             </AccordionPanel>
           </AccordionItem>
+          <AccordionItem>
+            <AccordionButton
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              p={4}>
+              <Text fontSize="md">Beca de Residencia</Text>
+              <ChevronDownIcon fontSize="24px" />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              <Text color="gray.600">
+              Consiste en un aporte monetario mensual destinado a cubrir parte de los gastos 
+              de hospedaje o de traslado, cuyo monto varía de acuerdo a la modalidad de la 
+              beca otorgada. Su asignación está sujeta a la evaluación de la situación 
+              socioeconómica de cada estudiante y a los límites presupuestarios de la institución
+              </Text>
+            </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionButton
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              p={4}>
+              <Text fontSize="md">Beca de Matrícula</Text>
+              <ChevronDownIcon fontSize="24px" />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              <Text color="gray.600">
+              Consiste en la exención de pago de un porcentaje del arancel básico de matrícula 
+              anual, que se determina en función del decil al que pertenezca cada estudiante. 
+              Esta beca se asigna automáticamente durante el segundo semestre a quienes cumplen 
+              los requisitos de focalización social, proceso a cargo de la Dirección de Relaciones 
+              Estudiantiles.
+              </Text>
+            </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionButton
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              p={4}>
+              <Text fontSize="md">Beca de Mantención Federico Santa María</Text>
+              <ChevronDownIcon fontSize="24px" />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              <Text color="gray.600">
+              Consiste en la entrega de un monto mensual en dinero, durante los meses de abril 
+              a diciembre, destinado a apoyar los gastos asociados a la actividad estudiantil. 
+              Para esta beca no se necesita postular, sino que se asigna de acuerdo a los 
+              antecedentes académicos y socioeconómicos del estudiantado.
+              </Text>
+            </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionButton
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              p={4}>
+              <Text fontSize="md">Fondo Solidario de Crédito Universitario USM</Text>
+              <ChevronDownIcon fontSize="24px" />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              <Text color="gray.600">
+              Beneficio destinado a aquellos estudiantes calificados dentro de los 6 primeros 
+              deciles de ingresos socioeconómicos y que reciben una ayuda estudiantil del 
+              Ministerio de Educación por el 100% del arancel de referencia. En este caso, la 
+              USM otorga un crédito por la diferencia entre dicho financiamiento y el arancel 
+              real de la carrera.
+              </Text>
+            </AccordionPanel>
+          </AccordionItem>
         </Accordion>
       </Container>
     </Flex>
