@@ -6,6 +6,7 @@ import {
   useDisclosure,
   useColorModeValue,
   HStack,
+  Button,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
@@ -16,7 +17,13 @@ export default function WithAction() {
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} top="0" width="100%">
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+        <Flex
+          h={16}
+          alignItems={'center'}
+          justifyContent={'space-between'}
+          maxWidth="1200px"
+          mx="auto"
+        >
           <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -38,7 +45,7 @@ export default function WithAction() {
                 }}
                 href={'/'}
               >
-                Home
+                Inicio
               </Box>
               <Box
                 as="a"
@@ -81,6 +88,21 @@ export default function WithAction() {
               </Box>
             </HStack>
           </HStack>
+          <Flex alignItems="center">
+            <Button
+              as={'a'}
+              display={{ base: 'none', md: 'inline-flex' }}
+              fontSize={'sm'}
+              fontWeight={600}
+              color={'white'}
+              bg={'pink.400'}
+              href={'/sign-in'}
+              _hover={{
+                bg: 'pink.300',
+              }}>
+              ¿Puedes postular a becas?
+            </Button>
+          </Flex>
         </Flex>
 
         {isOpen ? (

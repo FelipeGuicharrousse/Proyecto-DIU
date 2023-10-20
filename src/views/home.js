@@ -7,10 +7,12 @@ import {
   Flex,
   useColorModeValue,
   Text,
+  Box,
   Container,
 } from '@chakra-ui/react';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
+import CaptionCarousel from '../components/captionCarousel.js';
 
 function Home() {
   return (
@@ -18,8 +20,10 @@ function Home() {
       minH={'100vh'}
       align={'center'}
       justify={'center'}
+      width={'full'}
       bg={useColorModeValue('gray.50', 'gray.800')}>
-      <Container>
+      <Box width="100%">
+        <CaptionCarousel />
         <Text fontSize="2xl" fontWeight="bold" mb={4}>
           Becas
         </Text>
@@ -155,7 +159,7 @@ function Home() {
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
-      </Container>
+      </Box>
     </Flex>
   );
 }
