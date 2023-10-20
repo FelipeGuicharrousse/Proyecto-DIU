@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   Box,
   IconButton,
@@ -7,9 +7,12 @@ import {
   Heading,
   Text,
   Container,
-} from '@chakra-ui/react'
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
-import Slider from 'react-slick'
+} from '@chakra-ui/react';
+import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+import Slider from 'react-slick';
+import imagen1 from '../images/San-Joaquín.jpg';
+import imagen2 from '../images/Alumnos-usm-sonriendo.jpeg';
+import imagen3 from '../images/Alumnos-robotica.jpg';
 
 const settings = {
   dots: true,
@@ -21,40 +24,42 @@ const settings = {
   autoplaySpeed: 5000,
   slidesToShow: 1,
   slidesToScroll: 1,
-}
+};
 
 export default function CaptionCarousel() {
   const [slider, setSlider] = React.useState();
 
-  const top = useBreakpointValue({ base: '90%', md: '50%' })
-  const side = useBreakpointValue({ base: '30%', md: '40px' })
+  const top = useBreakpointValue({ base: '50%', md: '50%' });
+  const side = useBreakpointValue({ base: '30%', md: '40px' });
+
+  const carouselHeight = '400px';
 
   const cards = [
     {
-      title: 'Bienvenido a la pagina de Relaciones Estudiantiles de la USM',
-      text: "",
+      title: '¡Te damos la bienvenida a la página de Relaciones Estudiantiles de la USM!',
+      text: '',
       color: 'Black',
-      image:
-        'https://noticias.usm.cl/wp-content//uploads/2021/07/San-Joaqu%C3%ADn.jpg',
+      color_oposite: 'White',
+      image: imagen1,
     },
     {
-      title: 'Informaciones sobre Becas, Salud y Noticias para nuestros estudiantes',
+      title: 'Información sobre becas, salud y noticias destinadas a nuestros estudiantes.',
       text: '',
       color: 'White',
-      image:
-        'https://assets.isu.pub/document-structure/230503185024-218ba0c27551f1d4228269f5c41c7cd8/v1/5c999e1fe35c60422e2a5d897698e00d.jpeg',
+      color_oposite: 'Black',
+      image: imagen2,
     },
     {
-      title: 'Para una mejor vida universitaria',
-      text: "",
-      color: 'Greytext',
-      image:
-        'https://noticias.usm.cl/wp-content//uploads/2020/09/IMG_0052.jpg',
+      title: 'Con el fin de mejorar la calidad de vida universitaria.',
+      text: '',
+      color: 'Black',
+      color_oposite: 'White',
+      image: imagen3,
     },
-  ]
+  ];
 
   return (
-    <Box position={'relative'} height={'600px'} width="100%" overflow={'hidden'}>
+    <Box position={'relative'} height={carouselHeight} width="100%" overflow={'hidden'}>
       <link
         rel="stylesheet"
         type="text/css"
@@ -91,21 +96,29 @@ export default function CaptionCarousel() {
         {cards.map((card, index) => (
           <Box
             key={index}
-            height={'6xl'}
+            height={carouselHeight} // Ajusta la altura de la diapositiva
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
-            backgroundImage={`url(${card.image})`}>
-            <Container size="container.lg" height="600px" position="relative">
+            backgroundImage={`url(${card.image})`}
+          >
+            <Container size="container.lg" height={carouselHeight} position="relative">
               <Stack
                 spacing={6}
                 w={'full'}
                 maxW={'lg'}
                 position="absolute"
                 top="50%"
-                transform="translate(0, -50%)">
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color={card.color}>
+                transform="translate(0, -50%)"
+              >
+                <Heading
+                  fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
+                  color="White"
+                  style={{
+                    textShadow: '2px 2px 2px black, -2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black',
+                  }}
+                >
                   {card.title}
                 </Heading>
                 <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
@@ -117,5 +130,5 @@ export default function CaptionCarousel() {
         ))}
       </Slider>
     </Box>
-  )
+  );
 }
