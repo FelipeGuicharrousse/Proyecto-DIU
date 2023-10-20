@@ -3,6 +3,10 @@
 
 import { Link } from 'react-router-dom';
 
+import React, { useState } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
+
+
 import {
   Box,
   Heading,
@@ -12,6 +16,14 @@ import {
   Button,
   Wrap,
   WrapItem,
+  
+  Modal, 
+  ModalOverlay, 
+  ModalContent, 
+  ModalHeader, 
+  ModalBody, 
+  ModalCloseButton, 
+  ModalFooter,
 } from '@chakra-ui/react'
 
 
@@ -19,7 +31,18 @@ import {
 
 
 
-export default function blogPostWithImage() {
+export default function NewsPage() {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  const handleOpenPDF = () => {
+    setIsOpen(true);
+  };
+
+  const handleClosePDF = () => {
+    setIsOpen(false);
+  };
+
+
   return (
     <div>
       <div id='Recientes'>
@@ -48,18 +71,33 @@ export default function blogPostWithImage() {
               Reglamento Institucional de Derechos, Deberes y Disciplina del Estudiantado
               </Text>
             </Stack>
+            
             <Button
-              px={8}
               color={'white'}
-              rounded={'md'}
-              bg='grey'
+              bg={'gray.700'}
               _hover={{
                 transform: 'translateY(-2px)',
                 boxShadow: 'lg',
               }}
+              onClick={handleOpenPDF}
             >
-              <Link to='/about-us'>Ver Documento</Link>
+            Ver Documento
             </Button>
+            <Modal isOpen={isOpen} onClose={handleClosePDF} >
+              <ModalOverlay/>
+                <ModalContent style={{ width: 'auto%', maxWidth: '90%', height: '90%',minHeight:'50px', maxHeight: '90%' }}>
+                  <ModalCloseButton />
+                  <ModalBody width={'100%'} height={'100%'}>
+                    <iframe title="PDF Viewer" width="95%" height="100%" src="/175_2023_DECRETO.pdf"></iframe>
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button colorScheme="blue" onClick={handleClosePDF}>
+                      Cerrar
+                    </Button>
+                  </ModalFooter>
+                </ModalContent>
+            </Modal>
+            
           </Box>
           </WrapItem>
           <WrapItem>
