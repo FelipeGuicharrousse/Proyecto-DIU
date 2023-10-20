@@ -8,7 +8,6 @@ import {
   useColorModeValue,
   Text,
   Box,
-  Container,
 } from '@chakra-ui/react';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
