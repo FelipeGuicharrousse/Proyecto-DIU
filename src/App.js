@@ -5,6 +5,7 @@ import Home from './views/home.js';
 import Form from './views/form.js';
 import News from './views/news.js';
 import Publications from './views/publications.js'
+import Salud from './views/salud.js';
 import WithAction from './components/withAction.js';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/about-us" element={<Form />} />
             <Route path="/news" element={<News />} />
             <Route path="/publications" element={<Publications />} />
+            <Route path="/health" element={<Salud />} />
           </Routes>
         </div>
       </div>
