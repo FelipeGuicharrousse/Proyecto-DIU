@@ -75,6 +75,19 @@ export default function WithAction() {
                   textDecoration: 'none',
                   bg: hoverBgColor,
                 }}
+                href={'/publications'}
+              >
+                Publicaciones
+              </Box>
+              <Box
+                as="a"
+                px={2}
+                py={1}
+                rounded={'md'}
+                _hover={{
+                  textDecoration: 'none',
+                  bg: hoverBgColor,
+                }}
                 href={'/health'}
               >
                 Salud

@@ -1,378 +1,728 @@
 'use client'
 
 
-import { Link } from 'react-router-dom';
-
-import React, { useState } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
-
-
+import React from 'react'
 import {
   Box,
+  Center,
   Heading,
   Text,
   Stack,
   useColorModeValue,
-  Button,
+  Image,
+  IconButton,
+  Container,
+  useBreakpointValue,
+  Link,
   Wrap,
   WrapItem,
-  
-  Modal, 
-  ModalOverlay, 
-  ModalContent, 
-  ModalHeader, 
-  ModalBody, 
-  ModalCloseButton, 
-  ModalFooter,
 } from '@chakra-ui/react'
+{/*import { Link } from 'react-router-dom'*/}
 
 
-
-
-
-
-export default function NewsPage() {
-  const [isOpen, setIsOpen] = useState(false);
-  
-  const handleOpenPDF = () => {
-    setIsOpen(true);
-  };
-
-  const handleClosePDF = () => {
-    setIsOpen(false);
-  };
-
+export default function News() {
 
   return (
     <div>
-      <div id='Recientes'>
-        <Heading align="left" padding="15px">Recientes</Heading>
-        <Wrap spacing='30px' align={'center'} justify={'center'}>
+      <Heading padding='10px' align='left'>Noticias</Heading>
+      <div align='center'>
+        <Wrap align={'justify'} justify={'center'} padding={'10px'}>
           <WrapItem>
-          <Box
-            maxW={'300px'}
-            w={'full'}
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'2xl'}
-            rounded={'md'}
-            p={6}
-            overflow={'hidden'}>
-            
-            <Stack paddingBottom='10px'>
-              <Heading
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                color={useColorModeValue('gray.700', 'white')}
-                fontSize={'2xl'}
-                fontFamily={'body'}>
-                Decreto Rectoría N° 175/2023 
-              </Heading>
-              <Text color={'gray.500'}>
-              Reglamento Institucional de Derechos, Deberes y Disciplina del Estudiantado
-              </Text>
-            </Stack>
-            
-            <Button
-              color={'white'}
-              bg={'gray.700'}
-              _hover={{
-                transform: 'translateY(-2px)',
-                boxShadow: 'lg',
-              }}
-              onClick={handleOpenPDF}
-            >
-            Ver Documento
-            </Button>
-            <Modal isOpen={isOpen} onClose={handleClosePDF} >
-              <ModalOverlay/>
-                <ModalContent style={{ width: 'auto%', maxWidth: '90%', height: '90%',minHeight:'50px', maxHeight: '90%' }}>
-                  <ModalCloseButton />
-                  <ModalBody width={'100%'} height={'100%'}>
-                    <iframe title="PDF Viewer" width="95%" height="100%" src="/175_2023_DECRETO.pdf"></iframe>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button colorScheme="blue" onClick={handleClosePDF}>
-                      Cerrar
-                    </Button>
-                  </ModalFooter>
-                </ModalContent>
-            </Modal>
-            
-          </Box>
-          </WrapItem>
-          <WrapItem>
-          <Box
-            maxW={'300px'}
-            w={'full'}
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'2xl'}
-            rounded={'md'}
-            p={6}
-            overflow={'hidden'}>
-            
-            <Stack paddingBottom='10px'>
-              <Heading
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                color={useColorModeValue('gray.700', 'white')}
-                fontSize={'2xl'}
-                fontFamily={'body'}>
-                Decreto Rectoría N° 355/2022  
-              </Heading>
-              <Text color={'gray.500'}>
-              Política integral para la prevención, investigación y sanción de acoso sexual, 
-              la violencia y la discriminación de género en el contexto de la ley N°21.369
-              </Text>
-            </Stack>
-            <Button
-              px={8}
-              color={'white'}
+            <Box
+              maxW={'300px'}
+              minW={'300px'}
+              maxH={'600px'}
+              minH={'600px'}
+
+              w={'full'}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              bg={useColorModeValue('white', 'gray.900')}
+              boxShadow={'2xl'}
               rounded={'md'}
-              bg='grey'
-              _hover={{
-                transform: 'translateY(-2px)',
-                boxShadow: 'lg',
-              }}
-            >
-              <Link to='/about-us'>Ver Documento</Link>
-            </Button>
-          </Box>
-          </WrapItem>
-          </Wrap>
-      </div>
-      <div id='Anteriores'>
-        <Heading align="left" padding="15px">Publicaciones Anteriores</Heading>
-        
-        <Wrap spacing='30px' align={'center'} justify={'center'}>
-          <WrapItem>
-          <Box
-            maxW={'300px'}
-            w={'full'}
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'2xl'}
-            rounded={'md'}
-            p={6}
-            overflow={'hidden'}>
-            
-            <Stack paddingBottom='10px'>
-              <Heading
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                color={useColorModeValue('gray.700', 'white')}
-                fontSize={'2xl'}
-                fontFamily={'body'}>
-                Decreto Rectoría N° 405/2022 
-              </Heading>
-              <Text color={'gray.500'}>
-              Reglamento de investigación y sanción del acoso sexual,
-              la violencia y la discriminación de género
-              </Text>
-            </Stack>
-            <Button
-              px={8}
-              color={'white'}
-              rounded={'md'}
-              bg='grey'
-              _hover={{
-                transform: 'translateY(-2px)',
-                boxShadow: 'lg',
-              }}
-            >
-              <Link to='/about-us'>Ver Documento</Link>
-            </Button>
-          </Box>
-          </WrapItem>
-          
-          <WrapItem>
-          <Box
-            maxW={'300px'}
-            w={'full'}
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'2xl'}
-            rounded={'md'}
-            p={6}
-            overflow={'hidden'}>
-            
-            <Stack paddingBottom='10px'>
-              <Heading
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                color={useColorModeValue('gray.700', 'white')}
-                fontSize={'2xl'}
-                fontFamily={'body'}>
-                Memoria Institucional 2021
-              </Heading>
-              <Text color={'gray.500'}>
-              
-              </Text>
-            </Stack>
-            <Button
-              px={8}
-              color={'white'}
-              rounded={'md'}
-              bg='grey'
-              _hover={{
-                transform: 'translateY(-2px)',
-                boxShadow: 'lg',
-              }}
-            >
-              <Link to='/about-us'>Ver Documento</Link>
-            </Button>
-          </Box>
+              p={6}
+              overflow={'hidden'}>
+              <Box h={'200px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+                <Image
+                  src={'/news/news1.jpg'}
+                  fill
+                />
+              </Box>
+              <Stack>
+                <Heading
+                  color={useColorModeValue('gray.700', 'white')}
+                  fontSize={'18px'}
+                  fontFamily={'body'}
+                  minH={'95px'}
+                  maxH={'95px'}
+                  overflow={'hidden'}
+                  >
+                  Estudiante USM participa de campeonato internacional Goalball en Brasil
+                </Heading>
+                <Text 
+                color={'gray.500'} 
+                align={'justify'} 
+                maxH={'140px'}
+                overflow={'hidden'}
+                >
+                Melany Olave, estudiante de Ingeniería Comercial de Campus Casa Central Valparaíso,
+                 participará de campeonato internacional de Goalball en la ciudad de São Paulo, Brasil, 
+                 entre el 24 y 28 de octubre.
+                </Text>
+                <Link 
+                  to="/home" 
+                  color="teal.500" 
+                  fontWeight="bold" 
+                  fontSize="xl"
+                  style={{ textDecoration: 'underline' }}
+                  >
+                  Ver Noticia
+                </Link>
+              </Stack>
+              <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+                  <Text fontWeight={600}>Jorge Rubio, Periodista. Dirección de Relaciones Estudiantiles. </Text>
+                  <Text color={'gray.500'}> Fecha de publicación: 19/10/2023</Text>
+                </Stack>
+              </Stack>
+            </Box>
           </WrapItem>
 
           <WrapItem>
-          <Box
-            maxW={'300px'}
-            w={'full'}
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'2xl'}
-            rounded={'md'}
-            p={6}
-            overflow={'hidden'}>
-            
-            <Stack paddingBottom='10px'>
-              <Heading
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                color={useColorModeValue('gray.700', 'white')}
-                fontSize={'2xl'}
-                fontFamily={'body'}>
-                Memoria Institucional 2020
-              </Heading>
-              <Text color={'gray.500'}>
-              
-              </Text>
-            </Stack>
-            <Button
-              px={8}
-              color={'white'}
+            <Box
+              maxW={'300px'}
+              minW={'300px'}
+              maxH={'600px'}
+              minH={'600px'}
+
+              w={'full'}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              bg={useColorModeValue('white', 'gray.900')}
+              boxShadow={'2xl'}
               rounded={'md'}
-              bg='grey'
-              _hover={{
-                transform: 'translateY(-2px)',
-                boxShadow: 'lg',
-              }}
-            >
-              <Link to='/about-us'>Ver Documento</Link>
-            </Button>
-          </Box>
+              p={6}
+              overflow={'hidden'}>
+              <Box h={'200px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+                <Image
+                  src={'/news/news2.jpg'}
+                  fill
+                />
+              </Box>
+              <Stack>
+                <Heading
+                  color={useColorModeValue('gray.700', 'white')}
+                  fontSize={'18px'}
+                  fontFamily={'body'}
+                  minH={'95px'}
+                  maxH={'95px'}
+                  overflow={'hidden'}
+                  >
+                  Sansanos y sansanas líderes de la sede Viña del Mar son capacitados en 
+                  primeros auxilios psicológicos
+
+                </Heading>
+                <Text 
+                color={'gray.500'} 
+                align={'justify'} 
+                maxH={'140px'}
+                overflow={'hidden'}
+                >
+                Actividad dirigida a tutores pares del programa PACE y ayudantes del CIAC, e impulsada 
+                por el Departamento de Bienestar Estudiantil Sede Viña del Mar junto a DATA-E (Dirección 
+                de Acompañamiento a la Trayectoria Académica Estudiantil) y se enmarca en la campaña local 
+                #LaSaludMentalImporta. 
+                </Text>
+                <Link 
+                  to="/home" 
+                  color="teal.500" 
+                  fontWeight="bold" 
+                  fontSize="xl"
+                  style={{ textDecoration: 'underline' }}
+                  >
+                  Ver Noticia
+                </Link>
+              </Stack>
+              <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+                  <Text fontWeight={600}>Paulina Arancibia, Periodista. DGC Sede Viña del Mar.</Text>
+                  <Text color={'gray.500'}>Fecha de publicación: 10/10/2023</Text>
+                </Stack>                
+              </Stack>
+            </Box>
           </WrapItem>
 
           <WrapItem>
-          <Box
-            maxW={'300px'}
-            w={'full'}
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'2xl'}
-            rounded={'md'}
-            p={6}
-            overflow={'hidden'}>
-            
-            <Stack paddingBottom='10px'>
-              <Heading
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                color={useColorModeValue('gray.700', 'white')}
-                fontSize={'2xl'}
-                fontFamily={'body'}>
-                Memoria Institucional 2019
-              </Heading>
-              <Text color={'gray.500'}>
-              
-              </Text>
-            </Stack>
-            <Button
-              px={8}
-              color={'white'}
+            <Box
+              maxW={'300px'}
+              minW={'300px'}
+              maxH={'600px'}
+              minH={'600px'}
+
+              w={'full'}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              bg={useColorModeValue('white', 'gray.900')}
+              boxShadow={'2xl'}
               rounded={'md'}
-              bg='grey'
-              _hover={{
-                transform: 'translateY(-2px)',
-                boxShadow: 'lg',
-              }}
-            >
-              <Link to='/about-us'>Ver Documento</Link>
-            </Button>
-          </Box>
+              p={6}
+              overflow={'hidden'}>
+              <Box h={'200px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+                <Image
+                  src={'/news/news3.jpg'}
+                  fill
+                />
+              </Box>
+              <Stack>
+                <Heading
+                  color={useColorModeValue('gray.700', 'white')}
+                  fontSize={'18px'}
+                  fontFamily={'body'}
+                  minH={'95px'}
+                  maxH={'95px'}
+                  overflow={'hidden'}
+                  >
+                  Proyecto busca fortalecer modelo de salud mental 
+                  institucional con enfoque inclusivo
+                </Heading>
+                <Text 
+                color={'gray.500'} 
+                align={'justify'} 
+                maxH={'140px'}
+                minH={'140px'}
+                overflow={'hidden'}
+                >
+                Esta iniciativa tiene una duración de dos años y está orientada a estudiantes 
+                de todos los campus y sedes. 
+                </Text>
+                <Link 
+                  to="/home" 
+                  color="teal.500" 
+                  fontWeight="bold" 
+                  fontSize="xl"
+                  style={{ textDecoration: 'underline' }}
+                  >
+                  Ver Noticia
+                </Link>
+              </Stack>
+              <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+                  <Text fontWeight={600}>Comunicaciones Internas. Dirección General de Comunicaciones.</Text>
+                  <Text color={'gray.500'}>Fecha de publicación: 10/10/2023</Text>
+                </Stack>                
+              </Stack>
+            </Box>
           </WrapItem>
+
           <WrapItem>
-          <Box
-            maxW={'300px'}
-            w={'full'}
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'2xl'}
-            rounded={'md'}
-            p={6}
-            overflow={'hidden'}>
-            
-            <Stack paddingBottom='10px'>
-              <Heading
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                color={useColorModeValue('gray.700', 'white')}
-                fontSize={'2xl'}
-                fontFamily={'body'}>
-                Memoria Institucional 2018
-              </Heading>
-              <Text color={'gray.500'}>
-              
-              </Text>
-            </Stack>
-            <Button
-              px={8}
-              color={'white'}
+            <Box
+              maxW={'300px'}
+              minW={'300px'}
+              maxH={'600px'}
+              minH={'600px'}
+
+              w={'full'}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              bg={useColorModeValue('white', 'gray.900')}
+              boxShadow={'2xl'}
               rounded={'md'}
-              bg='grey'
-              _hover={{
-                transform: 'translateY(-2px)',
-                boxShadow: 'lg',
-              }}
-            >
-              <Link to='/about-us'>Ver Documento</Link>
-            </Button>
-          </Box>
+              p={6}
+              overflow={'hidden'}>
+              <Box h={'200px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+                <Image
+                  src={'/news/news4.jpg'}
+                  fill
+                  minH={'100%'}
+                />
+              </Box>
+              <Stack>
+                <Heading
+                  color={useColorModeValue('gray.700', 'white')}
+                  fontSize={'16.5px'}
+                  fontFamily={'body'}
+                  minH={'95px'}
+                  maxH={'95px'}
+                  overflow={'hidden'}
+                  >
+                  Sociedad de Debates realiza talleres intensivos sobre estrategias para 
+                  hablar en público en Sedes Concepción y Viña del Mar
+                </Heading>
+                <Text 
+                color={'gray.500'} 
+                align={'justify'} 
+                maxH={'140px'}
+                minH={'140px'}
+                overflow={'hidden'}
+                >
+                Esta actividad se efectúa en el marco del compromiso con el desarrollo de 
+                habilidades comunicativas al llevar a cabo exitosos talleres en las Sedes 
+                Concepción y Viña del Mar. Estos eventos impulsan la formación de estudiantes
+                 en un esfuerzo constante por fortalecer sus habilidades comunicativas.
+                </Text>
+                <Link 
+                  to="/home" 
+                  color="teal.500" 
+                  fontWeight="bold" 
+                  fontSize="xl"
+                  style={{ textDecoration: 'underline' }}
+                  >
+                  Ver Noticia
+                </Link>
+              </Stack>
+              <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+                  <Text fontWeight={600}>Equipo Sociedad de Debates, Dirección de Relaciones Estudiantiles.</Text>
+                  <Text color={'gray.500'}>Fecha de publicación: 10/10/2023</Text>
+                </Stack>                
+              </Stack>
+            </Box>
           </WrapItem>
+
           <WrapItem>
-          <Box
-            maxW={'300px'}
-            w={'full'}
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'2xl'}
-            rounded={'md'}
-            p={6}
-            overflow={'hidden'}>
-            
-            <Stack paddingBottom='10px'>
-              <Heading
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                color={useColorModeValue('gray.700', 'white')}
-                fontSize={'2xl'}
-                fontFamily={'body'}>
-                Memoria Institucional 2017
-              </Heading>
-              <Text color={'gray.500'}>
-              
-              </Text>
-            </Stack>
-            <Button
-              px={8}
-              color={'white'}
+            <Box
+              maxW={'300px'}
+              minW={'300px'}
+              maxH={'600px'}
+              minH={'600px'}
+
+              w={'full'}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              bg={useColorModeValue('white', 'gray.900')}
+              boxShadow={'2xl'}
               rounded={'md'}
-              bg='grey'
-              _hover={{
-                transform: 'translateY(-2px)',
-                boxShadow: 'lg',
-              }}
-            >
-              <Link to='/about-us'>Ver Documento</Link>
-            </Button>
-          </Box>
+              p={6}
+              overflow={'hidden'}>
+              <Box h={'200px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+                <Image
+                  src={'/news/news7.jpg'}
+                  fill
+                  minH={'100%'}
+                />
+              </Box>
+              <Stack>
+                <Heading
+                  color={useColorModeValue('gray.700', 'white')}
+                  fontSize={'17px'}
+                  fontFamily={'body'}
+                  minH={'95px'}
+                  maxH={'95px'}
+                  overflow={'hidden'}
+                  >
+                  Encuentro Interregional de Debate Parlamentario Británico Unipersonal se realiza 
+                  con éxito en Sede Concepción
+                </Heading>
+                <Text 
+                color={'gray.500'} 
+                align={'justify'} 
+                maxH={'140px'}
+                minH={'140px'}
+                overflow={'hidden'}
+                >
+                El evento reunió a cerca de un centenar de entusiastas participantes de 
+                diversas instituciones educativas, desde escolares hasta universitarios, 
+                en un formato de debate al estilo parlamentario británico y con más de 18 
+                debates realizados.
+                </Text>
+                <Link 
+                  to="/home" 
+                  color="teal.500" 
+                  fontWeight="bold" 
+                  fontSize="xl"
+                  style={{ textDecoration: 'underline' }}
+                  >
+                  Ver Noticia
+                </Link>
+              </Stack>
+              <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+                  <Text fontWeight={600}>Equipo Sociedad de Debates, Dirección de Relaciones Estudiantiles. </Text>
+                  <Text color={'gray.500'}>Fecha de publicación: 10/10/2023</Text>
+                </Stack>                
+              </Stack>
+            </Box>
+          </WrapItem>
+
+          <WrapItem>
+            <Box
+              maxW={'300px'}
+              minW={'300px'}
+              maxH={'600px'}
+              minH={'600px'}
+
+              w={'full'}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              bg={useColorModeValue('white', 'gray.900')}
+              boxShadow={'2xl'}
+              rounded={'md'}
+              p={6}
+              overflow={'hidden'}>
+              <Box h={'200px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+                <Image
+                  src={'/news/news6.jpg'}
+                  fill
+                  minH={'100%'}
+                />
+              </Box>
+              <Stack>
+                <Heading
+                  color={useColorModeValue('gray.700', 'white')}
+                  fontSize={'17px'}
+                  fontFamily={'body'}
+                  minH={'95px'}
+                  maxH={'95px'}
+                  overflow={'hidden'}
+                  >
+                  Encuentro Interregional de Debate Parlamentario Británico Unipersonal se realiza 
+                  con éxito en Sede Concepción
+                </Heading>
+                <Text 
+                color={'gray.500'} 
+                align={'justify'} 
+                maxH={'140px'}
+                minH={'140px'}
+                overflow={'hidden'}
+                >
+                El evento reunió a cerca de un centenar de entusiastas participantes de 
+                diversas instituciones educativas, desde escolares hasta universitarios, 
+                en un formato de debate al estilo parlamentario británico y con más de 18 
+                debates realizados.
+                </Text>
+                <Link 
+                  to="/home" 
+                  color="teal.500" 
+                  fontWeight="bold" 
+                  fontSize="xl"
+                  style={{ textDecoration: 'underline' }}
+                  >
+                  Ver Noticia
+                </Link>
+              </Stack>
+              <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+                  <Text fontWeight={600}>Equipo Sociedad de Debates, Dirección de Relaciones Estudiantiles. </Text>
+                  <Text color={'gray.500'}>Fecha de publicación: 10/10/2023</Text>
+                </Stack>                
+              </Stack>
+            </Box>
+          </WrapItem>
+
+          <WrapItem>
+            <Box
+              maxW={'300px'}
+              minW={'300px'}
+              maxH={'600px'}
+              minH={'600px'}
+
+              w={'full'}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              bg={useColorModeValue('white', 'gray.900')}
+              boxShadow={'2xl'}
+              rounded={'md'}
+              p={6}
+              overflow={'hidden'}>
+              <Box h={'200px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+                <Image
+                  src={'/news/news7.jpg'}
+                  fill
+                  minH={'100%'}
+                />
+              </Box>
+              <Stack>
+                <Heading
+                  color={useColorModeValue('gray.700', 'white')}
+                  fontSize={'17px'}
+                  fontFamily={'body'}
+                  minH={'95px'}
+                  maxH={'95px'}
+                  overflow={'hidden'}
+                  >
+                  Encuentro Interregional de Debate Parlamentario Británico Unipersonal se realiza 
+                  con éxito en Sede Concepción
+                </Heading>
+                <Text 
+                color={'gray.500'} 
+                align={'justify'} 
+                maxH={'140px'}
+                minH={'140px'}
+                overflow={'hidden'}
+                >
+                El evento reunió a cerca de un centenar de entusiastas participantes de 
+                diversas instituciones educativas, desde escolares hasta universitarios, 
+                en un formato de debate al estilo parlamentario británico y con más de 18 
+                debates realizados.
+                </Text>
+                <Link 
+                  to="/home" 
+                  color="teal.500" 
+                  fontWeight="bold" 
+                  fontSize="xl"
+                  style={{ textDecoration: 'underline' }}
+                  >
+                  Ver Noticia
+                </Link>
+              </Stack>
+              <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+                  <Text fontWeight={600}>Equipo Sociedad de Debates, Dirección de Relaciones Estudiantiles. </Text>
+                  <Text color={'gray.500'}>Fecha de publicación: 10/10/2023</Text>
+                </Stack>                
+              </Stack>
+            </Box>
+          </WrapItem>
+
+          <WrapItem>
+            <Box
+              maxW={'300px'}
+              minW={'300px'}
+              maxH={'600px'}
+              minH={'600px'}
+
+              w={'full'}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              bg={useColorModeValue('white', 'gray.900')}
+              boxShadow={'2xl'}
+              rounded={'md'}
+              p={6}
+              overflow={'hidden'}>
+              <Box h={'200px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+                <Image
+                  src={'/news/news8.jpg'}
+                  fill
+                  minH={'100%'}
+                />
+              </Box>
+              <Stack>
+                <Heading
+                  color={useColorModeValue('gray.700', 'white')}
+                  fontSize={'17px'}
+                  fontFamily={'body'}
+                  minH={'95px'}
+                  maxH={'95px'}
+                  overflow={'hidden'}
+                  >
+                  Encuentro Interregional de Debate Parlamentario Británico Unipersonal se realiza 
+                  con éxito en Sede Concepción
+                </Heading>
+                <Text 
+                color={'gray.500'} 
+                align={'justify'} 
+                maxH={'140px'}
+                minH={'140px'}
+                overflow={'hidden'}
+                >
+                El evento reunió a cerca de un centenar de entusiastas participantes de 
+                diversas instituciones educativas, desde escolares hasta universitarios, 
+                en un formato de debate al estilo parlamentario británico y con más de 18 
+                debates realizados.
+                </Text>
+                <Link 
+                  to="/home" 
+                  color="teal.500" 
+                  fontWeight="bold" 
+                  fontSize="xl"
+                  style={{ textDecoration: 'underline' }}
+                  >
+                  Ver Noticia
+                </Link>
+              </Stack>
+              <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+                  <Text fontWeight={600}>Equipo Sociedad de Debates, Dirección de Relaciones Estudiantiles. </Text>
+                  <Text color={'gray.500'}>Fecha de publicación: 10/10/2023</Text>
+                </Stack>                
+              </Stack>
+            </Box>
+          </WrapItem>
+
+          <WrapItem>
+            <Box
+              maxW={'300px'}
+              minW={'300px'}
+              maxH={'600px'}
+              minH={'600px'}
+
+              w={'full'}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              bg={useColorModeValue('white', 'gray.900')}
+              boxShadow={'2xl'}
+              rounded={'md'}
+              p={6}
+              overflow={'hidden'}>
+              <Box h={'200px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+                <Image
+                  src={'/news/news4.jpg'}
+                  fill
+                  minH={'100%'}
+                />
+              </Box>
+              <Stack>
+                <Heading
+                  color={useColorModeValue('gray.700', 'white')}
+                  fontSize={'17px'}
+                  fontFamily={'body'}
+                  minH={'95px'}
+                  maxH={'95px'}
+                  overflow={'hidden'}
+                  >
+                  Encuentro Interregional de Debate Parlamentario Británico Unipersonal se realiza 
+                  con éxito en Sede Concepción
+                </Heading>
+                <Text 
+                color={'gray.500'} 
+                align={'justify'} 
+                maxH={'140px'}
+                minH={'140px'}
+                overflow={'hidden'}
+                >
+                El evento reunió a cerca de un centenar de entusiastas participantes de 
+                diversas instituciones educativas, desde escolares hasta universitarios, 
+                en un formato de debate al estilo parlamentario británico y con más de 18 
+                debates realizados.
+                </Text>
+                <Link 
+                  to="/home" 
+                  color="teal.500" 
+                  fontWeight="bold" 
+                  fontSize="xl"
+                  style={{ textDecoration: 'underline' }}
+                  >
+                  Ver Noticia
+                </Link>
+              </Stack>
+              <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+                  <Text fontWeight={600}>Equipo Sociedad de Debates, Dirección de Relaciones Estudiantiles. </Text>
+                  <Text color={'gray.500'}>Fecha de publicación: 10/10/2023</Text>
+                </Stack>                
+              </Stack>
+            </Box>
+          </WrapItem>
+
+          <WrapItem>
+            <Box
+              maxW={'300px'}
+              minW={'300px'}
+              maxH={'600px'}
+              minH={'600px'}
+
+              w={'full'}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              bg={useColorModeValue('white', 'gray.900')}
+              boxShadow={'2xl'}
+              rounded={'md'}
+              p={6}
+              overflow={'hidden'}>
+              <Box h={'200px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+                <Image
+                  src={'/news/news1.jpg'}
+                  fill
+                  minH={'100%'}
+                />
+              </Box>
+              <Stack>
+                <Heading
+                  color={useColorModeValue('gray.700', 'white')}
+                  fontSize={'17px'}
+                  fontFamily={'body'}
+                  minH={'95px'}
+                  maxH={'95px'}
+                  overflow={'hidden'}
+                  >
+                  Encuentro Interregional de Debate Parlamentario Británico Unipersonal se realiza 
+                  con éxito en Sede Concepción
+                </Heading>
+                <Text 
+                color={'gray.500'} 
+                align={'justify'} 
+                maxH={'140px'}
+                minH={'140px'}
+                overflow={'hidden'}
+                >
+                El evento reunió a cerca de un centenar de entusiastas participantes de 
+                diversas instituciones educativas, desde escolares hasta universitarios, 
+                en un formato de debate al estilo parlamentario británico y con más de 18 
+                debates realizados.
+                </Text>
+                <Link 
+                  to="/home" 
+                  color="teal.500" 
+                  fontWeight="bold" 
+                  fontSize="xl"
+                  style={{ textDecoration: 'underline' }}
+                  >
+                  Ver Noticia
+                </Link>
+              </Stack>
+              <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+                  <Text fontWeight={600}>Equipo Sociedad de Debates, Dirección de Relaciones Estudiantiles. </Text>
+                  <Text color={'gray.500'}>Fecha de publicación: 10/10/2023</Text>
+                </Stack>                
+              </Stack>
+            </Box>
+          </WrapItem>
+
+          <WrapItem>
+            <Box
+              maxW={'300px'}
+              minW={'300px'}
+              maxH={'600px'}
+              minH={'600px'}
+
+              w={'full'}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              bg={useColorModeValue('white', 'gray.900')}
+              boxShadow={'2xl'}
+              rounded={'md'}
+              p={6}
+              overflow={'hidden'}>
+              <Box h={'200px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+                <Image
+                  src={'/news/news2.jpg'}
+                  fill
+                  minH={'100%'}
+                />
+              </Box>
+              <Stack>
+                <Heading
+                  color={useColorModeValue('gray.700', 'white')}
+                  fontSize={'17px'}
+                  fontFamily={'body'}
+                  minH={'95px'}
+                  maxH={'95px'}
+                  overflow={'hidden'}
+                  >
+                  Encuentro Interregional de Debate Parlamentario Británico Unipersonal se realiza 
+                  con éxito en Sede Concepción
+                </Heading>
+                <Text 
+                color={'gray.500'} 
+                align={'justify'} 
+                maxH={'140px'}
+                minH={'140px'}
+                overflow={'hidden'}
+                >
+                El evento reunió a cerca de un centenar de entusiastas participantes de 
+                diversas instituciones educativas, desde escolares hasta universitarios, 
+                en un formato de debate al estilo parlamentario británico y con más de 18 
+                debates realizados.
+                </Text>
+                <Link 
+                  to="/home" 
+                  color="teal.500" 
+                  fontWeight="bold" 
+                  fontSize="xl"
+                  style={{ textDecoration: 'underline' }}
+                  >
+                  Ver Noticia
+                </Link>
+              </Stack>
+              <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
+                  <Text fontWeight={600}>Equipo Sociedad de Debates, Dirección de Relaciones Estudiantiles. </Text>
+                  <Text color={'gray.500'}>Fecha de publicación: 10/10/2023</Text>
+                </Stack>                
+              </Stack>
+            </Box>
           </WrapItem>
         </Wrap>
-        
-       
       </div>
     </div>
     
