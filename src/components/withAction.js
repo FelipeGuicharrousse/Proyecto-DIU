@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   HStack,
   Button,
+  Link,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
@@ -32,8 +33,20 @@ export default function WithAction() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
-            <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
+          <Link to="/health">
+            <Box as="a"
+              backgroundImage="logo192.png"
+              backgroundSize="cover"
+              backgroundPosition="center"
+              width="100px"
+              height="60px"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+            </Box>
+          </Link>
+            <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }} color='white'>
               <Box
                 as="a"
                 px={2}
@@ -72,6 +85,19 @@ export default function WithAction() {
                 href={'/news'}
               >
                 Noticias
+              </Box>
+              <Box
+                as="a"
+                px={2}
+                py={1}
+                rounded={'md'}
+                _hover={{
+                  textDecoration: 'none',
+                  bg: hoverBgColor,
+                }}
+                href={'/publications'}
+              >
+                Publicaciones
               </Box>
               <Box
                 as="a"
