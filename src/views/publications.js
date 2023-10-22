@@ -21,7 +21,7 @@ import {
 
 
 
-export default function News() {
+export default function Publications() {
   
 
   const numButtons = 7; 
@@ -40,17 +40,24 @@ export default function News() {
     setIsOpen(updatedIsOpen);
   };
 
+  const cardBgColor = useColorModeValue('white', 'gray.900')
+  const cardTitleColor = useColorModeValue('gray.700', 'white')
+  const buttonBgColor = 'gray.700'
+  const descriptionTextColor = 'gray.600'
+  
+  
   return (
     <div>
+      <Heading padding={'15px'} align='left' >Publicaciones</Heading>
       <div id='Decretos'>
-        <Heading align="left" padding="15px">Decretos</Heading>
+        <Heading align="left" padding="30px" fontSize={'22pt'}>Decretos</Heading>
         <Wrap spacing='30px' align={'center'} justify={'center'}>
           <WrapItem>
             <Box
               maxW={'300px'}
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -59,19 +66,19 @@ export default function News() {
               <Stack paddingBottom='10px'>
                 <Heading
                   // eslint-disable-next-line react-hooks/rules-of-hooks
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={cardTitleColor}
                   fontSize={'2xl'}
                   fontFamily={'body'}>
                   Decreto Rectoría N° 175/2023 
                 </Heading>
-                <Text color={'gray.500'}>
+                <Text color={descriptionTextColor}>
                 Reglamento Institucional de Derechos, Deberes y Disciplina del Estudiantado
                 </Text>
               </Stack>
               
               <Button
                 color={'white'}
-                bg={'gray.700'}
+                bg={buttonBgColor}
                 _hover={{
                   transform: 'translateY(-2px)',
                   boxShadow: 'lg',
@@ -98,7 +105,7 @@ export default function News() {
               maxW={'300px'}
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -107,19 +114,19 @@ export default function News() {
               <Stack paddingBottom='10px'>
                 <Heading
                   // eslint-disable-next-line react-hooks/rules-of-hooks
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={cardTitleColor}
                   fontSize={'2xl'}
                   fontFamily={'body'}>
                   Decreto Rectoría N° 355/2022  
                 </Heading>
-                <Text color={'gray.500'}>
+                <Text color={descriptionTextColor}>
                 Política integral para la prevención, investigación y sanción de acoso sexual, 
                 la violencia y la discriminación de género en el contexto de la ley N°21.369
                 </Text>
               </Stack>
               <Button
                 color={'white'}
-                bg={'gray.700'}
+                bg={buttonBgColor}
                 _hover={{
                   transform: 'translateY(-2px)',
                   boxShadow: 'lg',
@@ -145,7 +152,7 @@ export default function News() {
               maxW={'300px'}
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -154,19 +161,19 @@ export default function News() {
               <Stack paddingBottom='10px'>
                 <Heading
                   // eslint-disable-next-line react-hooks/rules-of-hooks
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={cardTitleColor}
                   fontSize={'2xl'}
                   fontFamily={'body'}>
                   Decreto Rectoría N° 405/2022 
                 </Heading>
-                <Text color={'gray.500'}>
+                <Text color={descriptionTextColor}>
                 Reglamento de investigación y sanción del acoso sexual,
                 la violencia y la discriminación de género
                 </Text>
               </Stack>
               <Button
                 color={'white'}
-                bg={'gray.700'}
+                bg={buttonBgColor}
                 _hover={{
                   transform: 'translateY(-2px)',
                   boxShadow: 'lg',
@@ -189,7 +196,7 @@ export default function News() {
         </Wrap>
       </div>
       <div id='Memorias'>
-        <Heading align="left" padding="15px">Memorias</Heading>
+        <Heading align="left" padding="30px" fontSize={'22pt'}>Memorias</Heading>
         
         <Wrap spacing='30px' align={'center'} justify={'center'}>
           
@@ -199,7 +206,7 @@ export default function News() {
             maxW={'300px'}
             w={'full'}
             // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
+            bg={cardBgColor}
             boxShadow={'2xl'}
             rounded={'md'}
             p={6}
@@ -208,18 +215,18 @@ export default function News() {
             <Stack paddingBottom='10px'>
               <Heading
                 // eslint-disable-next-line react-hooks/rules-of-hooks
-                color={useColorModeValue('gray.700', 'white')}
+                color={cardTitleColor}
                 fontSize={'2xl'}
                 fontFamily={'body'}>
                 Memoria Institucional 2021
               </Heading>
-              <Text color={'gray.500'}>
+              <Text color={descriptionTextColor}>
               
               </Text>
             </Stack>
             <Button
               color={'white'}
-              bg={'gray.700'}
+              bg={buttonBgColor}
               _hover={{
                 transform: 'translateY(-2px)',
                 boxShadow: 'lg',
@@ -245,7 +252,7 @@ export default function News() {
             maxW={'300px'}
             w={'full'}
             // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
+            bg={cardBgColor}
             boxShadow={'2xl'}
             rounded={'md'}
             p={6}
@@ -254,18 +261,18 @@ export default function News() {
             <Stack paddingBottom='10px'>
               <Heading
                 // eslint-disable-next-line react-hooks/rules-of-hooks
-                color={useColorModeValue('gray.700', 'white')}
+                color={cardTitleColor}
                 fontSize={'2xl'}
                 fontFamily={'body'}>
                 Memoria Institucional 2020
               </Heading>
-              <Text color={'gray.500'}>
+              <Text color={descriptionTextColor}>
               
               </Text>
             </Stack>
             <Button
               color={'white'}
-              bg={'gray.700'}
+              bg={buttonBgColor}
               _hover={{
                 transform: 'translateY(-2px)',
                 boxShadow: 'lg',
@@ -291,7 +298,7 @@ export default function News() {
               maxW={'300px'}
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -300,18 +307,18 @@ export default function News() {
               <Stack paddingBottom='10px'>
                 <Heading
                   // eslint-disable-next-line react-hooks/rules-of-hooks
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={cardTitleColor}
                   fontSize={'2xl'}
                   fontFamily={'body'}>
                   Memoria Institucional 2019
                 </Heading>
-                <Text color={'gray.500'}>
+                <Text color={descriptionTextColor}>
                 
                 </Text>
               </Stack>
               <Button
                 color={'white'}
-                bg={'gray.700'}
+                bg={buttonBgColor}
                 _hover={{
                   transform: 'translateY(-2px)',
                   boxShadow: 'lg',
@@ -337,7 +344,7 @@ export default function News() {
             maxW={'300px'}
             w={'full'}
             // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
+            bg={cardBgColor}
             boxShadow={'2xl'}
             rounded={'md'}
             p={6}
@@ -346,18 +353,18 @@ export default function News() {
             <Stack paddingBottom='10px'>
               <Heading
                 // eslint-disable-next-line react-hooks/rules-of-hooks
-                color={useColorModeValue('gray.700', 'white')}
+                color={cardTitleColor}
                 fontSize={'2xl'}
                 fontFamily={'body'}>
                 Memoria Institucional 2018
               </Heading>
-              <Text color={'gray.500'}>
+              <Text color={descriptionTextColor}>
               
               </Text>
             </Stack>
             <Button
                 color={'white'}
-                bg={'gray.700'}
+                bg={buttonBgColor}
                 _hover={{
                   transform: 'translateY(-2px)',
                   boxShadow: 'lg',

@@ -4,24 +4,21 @@
 import React from 'react'
 import {
   Box,
-  Center,
   Heading,
   Text,
   Stack,
   useColorModeValue,
   Image,
-  IconButton,
-  Container,
-  useBreakpointValue,
-  Link,
   Wrap,
   WrapItem,
 } from '@chakra-ui/react'
-{/*import { Link } from 'react-router-dom'*/}
+
 
 
 export default function News() {
-
+  const cardBgColor = useColorModeValue('white', 'gray.900')
+  const newsTitleColor = useColorModeValue('gray.700', 'white')
+  const boxButtonBgColor = useColorModeValue('gray.700', 'white')
   return (
     <div>
       <Heading padding='10px' align='left'>Noticias</Heading>
@@ -36,7 +33,7 @@ export default function News() {
 
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -49,7 +46,7 @@ export default function News() {
               </Box>
               <Stack>
                 <Heading
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={newsTitleColor}
                   fontSize={'18px'}
                   fontFamily={'body'}
                   minH={'95px'}
@@ -68,15 +65,18 @@ export default function News() {
                  participará de campeonato internacional de Goalball en la ciudad de São Paulo, Brasil, 
                  entre el 24 y 28 de octubre.
                 </Text>
-                <Link 
-                  to="/home" 
-                  color="teal.500" 
-                  fontWeight="bold" 
-                  fontSize="xl"
-                  style={{ textDecoration: 'underline' }}
-                  >
+                <Box
+                  color={'white'}
+                  bg={boxButtonBgColor}
+                  as="a"
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  
+                  href={'/news/example'}
+                >
                   Ver Noticia
-                </Link>
+                </Box>
               </Stack>
               <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
@@ -96,7 +96,7 @@ export default function News() {
 
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -109,7 +109,7 @@ export default function News() {
               </Box>
               <Stack>
                 <Heading
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={newsTitleColor}
                   fontSize={'18px'}
                   fontFamily={'body'}
                   minH={'95px'}
@@ -131,15 +131,18 @@ export default function News() {
                 de Acompañamiento a la Trayectoria Académica Estudiantil) y se enmarca en la campaña local 
                 #LaSaludMentalImporta. 
                 </Text>
-                <Link 
-                  to="/home" 
-                  color="teal.500" 
-                  fontWeight="bold" 
-                  fontSize="xl"
-                  style={{ textDecoration: 'underline' }}
-                  >
+                <Box
+                  color={'white'}
+                  bg={boxButtonBgColor}
+                  as="a"
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  
+                  href={'/news/example'}
+                >
                   Ver Noticia
-                </Link>
+                </Box>
               </Stack>
               <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
@@ -159,7 +162,7 @@ export default function News() {
 
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -172,7 +175,7 @@ export default function News() {
               </Box>
               <Stack>
                 <Heading
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={newsTitleColor}
                   fontSize={'18px'}
                   fontFamily={'body'}
                   minH={'95px'}
@@ -192,15 +195,18 @@ export default function News() {
                 Esta iniciativa tiene una duración de dos años y está orientada a estudiantes 
                 de todos los campus y sedes. 
                 </Text>
-                <Link 
-                  to="/home" 
-                  color="teal.500" 
-                  fontWeight="bold" 
-                  fontSize="xl"
-                  style={{ textDecoration: 'underline' }}
-                  >
+                <Box
+                  color={'white'}
+                  bg={boxButtonBgColor}
+                  as="a"
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  
+                  href={'/news/example'}
+                >
                   Ver Noticia
-                </Link>
+                </Box>
               </Stack>
               <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
@@ -220,7 +226,7 @@ export default function News() {
 
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -234,7 +240,7 @@ export default function News() {
               </Box>
               <Stack>
                 <Heading
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={newsTitleColor}
                   fontSize={'16.5px'}
                   fontFamily={'body'}
                   minH={'95px'}
@@ -256,15 +262,18 @@ export default function News() {
                 Concepción y Viña del Mar. Estos eventos impulsan la formación de estudiantes
                  en un esfuerzo constante por fortalecer sus habilidades comunicativas.
                 </Text>
-                <Link 
-                  to="/home" 
-                  color="teal.500" 
-                  fontWeight="bold" 
-                  fontSize="xl"
-                  style={{ textDecoration: 'underline' }}
-                  >
+                <Box
+                  color={'white'}
+                  bg={boxButtonBgColor}
+                  as="a"
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  
+                  href={'/news/example'}
+                >
                   Ver Noticia
-                </Link>
+                </Box>
               </Stack>
               <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
@@ -284,7 +293,7 @@ export default function News() {
 
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -298,7 +307,7 @@ export default function News() {
               </Box>
               <Stack>
                 <Heading
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={newsTitleColor}
                   fontSize={'17px'}
                   fontFamily={'body'}
                   minH={'95px'}
@@ -320,15 +329,18 @@ export default function News() {
                 en un formato de debate al estilo parlamentario británico y con más de 18 
                 debates realizados.
                 </Text>
-                <Link 
-                  to="/home" 
-                  color="teal.500" 
-                  fontWeight="bold" 
-                  fontSize="xl"
-                  style={{ textDecoration: 'underline' }}
-                  >
+                <Box
+                  color={'white'}
+                  bg={boxButtonBgColor}
+                  as="a"
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  
+                  href={'/news/example'}
+                >
                   Ver Noticia
-                </Link>
+                </Box>
               </Stack>
               <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
@@ -348,7 +360,7 @@ export default function News() {
 
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -362,7 +374,7 @@ export default function News() {
               </Box>
               <Stack>
                 <Heading
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={newsTitleColor}
                   fontSize={'17px'}
                   fontFamily={'body'}
                   minH={'95px'}
@@ -384,15 +396,18 @@ export default function News() {
                 en un formato de debate al estilo parlamentario británico y con más de 18 
                 debates realizados.
                 </Text>
-                <Link 
-                  to="/home" 
-                  color="teal.500" 
-                  fontWeight="bold" 
-                  fontSize="xl"
-                  style={{ textDecoration: 'underline' }}
-                  >
+                <Box
+                  color={'white'}
+                  bg={boxButtonBgColor}
+                  as="a"
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  
+                  href={'/news/example'}
+                >
                   Ver Noticia
-                </Link>
+                </Box>
               </Stack>
               <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
@@ -412,7 +427,7 @@ export default function News() {
 
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -426,7 +441,7 @@ export default function News() {
               </Box>
               <Stack>
                 <Heading
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={newsTitleColor}
                   fontSize={'17px'}
                   fontFamily={'body'}
                   minH={'95px'}
@@ -448,15 +463,18 @@ export default function News() {
                 en un formato de debate al estilo parlamentario británico y con más de 18 
                 debates realizados.
                 </Text>
-                <Link 
-                  to="/home" 
-                  color="teal.500" 
-                  fontWeight="bold" 
-                  fontSize="xl"
-                  style={{ textDecoration: 'underline' }}
-                  >
+                <Box
+                  color={'white'}
+                  bg={boxButtonBgColor}
+                  as="a"
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  
+                  href={'/news/example'}
+                >
                   Ver Noticia
-                </Link>
+                </Box>
               </Stack>
               <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
@@ -476,7 +494,7 @@ export default function News() {
 
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -490,7 +508,7 @@ export default function News() {
               </Box>
               <Stack>
                 <Heading
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={newsTitleColor}
                   fontSize={'17px'}
                   fontFamily={'body'}
                   minH={'95px'}
@@ -512,15 +530,18 @@ export default function News() {
                 en un formato de debate al estilo parlamentario británico y con más de 18 
                 debates realizados.
                 </Text>
-                <Link 
-                  to="/home" 
-                  color="teal.500" 
-                  fontWeight="bold" 
-                  fontSize="xl"
-                  style={{ textDecoration: 'underline' }}
-                  >
+                <Box
+                  color={'white'}
+                  bg={boxButtonBgColor}
+                  as="a"
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  
+                  href={'/news/example'}
+                >
                   Ver Noticia
-                </Link>
+                </Box>
               </Stack>
               <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
@@ -540,7 +561,7 @@ export default function News() {
 
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -554,7 +575,7 @@ export default function News() {
               </Box>
               <Stack>
                 <Heading
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={newsTitleColor}
                   fontSize={'17px'}
                   fontFamily={'body'}
                   minH={'95px'}
@@ -576,15 +597,18 @@ export default function News() {
                 en un formato de debate al estilo parlamentario británico y con más de 18 
                 debates realizados.
                 </Text>
-                <Link 
-                  to="/home" 
-                  color="teal.500" 
-                  fontWeight="bold" 
-                  fontSize="xl"
-                  style={{ textDecoration: 'underline' }}
-                  >
+                <Box
+                  color={'white'}
+                  bg={boxButtonBgColor}
+                  as="a"
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  
+                  href={'/news/example'}
+                >
                   Ver Noticia
-                </Link>
+                </Box>
               </Stack>
               <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
@@ -604,7 +628,7 @@ export default function News() {
 
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -618,7 +642,7 @@ export default function News() {
               </Box>
               <Stack>
                 <Heading
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={newsTitleColor}
                   fontSize={'17px'}
                   fontFamily={'body'}
                   minH={'95px'}
@@ -640,15 +664,18 @@ export default function News() {
                 en un formato de debate al estilo parlamentario británico y con más de 18 
                 debates realizados.
                 </Text>
-                <Link 
-                  to="/home" 
-                  color="teal.500" 
-                  fontWeight="bold" 
-                  fontSize="xl"
-                  style={{ textDecoration: 'underline' }}
-                  >
+                <Box
+                  color={'white'}
+                  bg={boxButtonBgColor}
+                  as="a"
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  
+                  href={'/news/example'}
+                >
                   Ver Noticia
-                </Link>
+                </Box>
               </Stack>
               <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
@@ -668,7 +695,7 @@ export default function News() {
 
               w={'full'}
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue('white', 'gray.900')}
+              bg={cardBgColor}
               boxShadow={'2xl'}
               rounded={'md'}
               p={6}
@@ -682,7 +709,7 @@ export default function News() {
               </Box>
               <Stack>
                 <Heading
-                  color={useColorModeValue('gray.700', 'white')}
+                  color={newsTitleColor}
                   fontSize={'17px'}
                   fontFamily={'body'}
                   minH={'95px'}
@@ -704,15 +731,18 @@ export default function News() {
                 en un formato de debate al estilo parlamentario británico y con más de 18 
                 debates realizados.
                 </Text>
-                <Link 
-                  to="/home" 
-                  color="teal.500" 
-                  fontWeight="bold" 
-                  fontSize="xl"
-                  style={{ textDecoration: 'underline' }}
-                  >
+                <Box
+                  color={'white'}
+                  bg={boxButtonBgColor}
+                  as="a"
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  
+                  href={'/news/example'}
+                >
                   Ver Noticia
-                </Link>
+                </Box>
               </Stack>
               <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>

@@ -6,16 +6,17 @@ import {
   useDisclosure,
   useColorModeValue,
   HStack,
+  Link,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 export default function WithAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const hoverBgColor = useColorModeValue('gray.200', 'gray.700');
+  const hoverBgColor = useColorModeValue('blue.200', 'blue.400');
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} top="0" width="100%">
+      <Box bg={useColorModeValue('blue.700', 'blue.900')} px={4} top="0" width="100%">
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -25,8 +26,20 @@ export default function WithAction() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
-            <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
+          <Link to="/health">
+            <Box as="a"
+              backgroundImage="logo192.png"
+              backgroundSize="cover"
+              backgroundPosition="center"
+              width="100px"
+              height="60px"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+            </Box>
+          </Link>
+            <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }} color='white'>
               <Box
                 as="a"
                 px={2}
