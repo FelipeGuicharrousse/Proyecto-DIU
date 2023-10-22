@@ -12,11 +12,11 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 export default function WithAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const hoverBgColor = useColorModeValue('gray.200', 'gray.700');
+  const hoverBgColor = useColorModeValue('blue.200', 'blue.400');
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} top="0" width="100%">
+      <Box bg={useColorModeValue('blue.700', 'blue.900')} px={4} top="0" width="100%">
         <Flex
           h={16}
           alignItems={'center'}
