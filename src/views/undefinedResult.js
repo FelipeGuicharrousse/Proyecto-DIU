@@ -22,8 +22,8 @@ function UndefinedResult() {
           No se ha podido determinar si puede obtener becas
         </Heading>
         <Text color={'gray.500'}>
-          Para saber que se puede hacer en tu situacion, por favor apela en los canales
-          de comunicacion de la universidad.
+          Para saber que se puede hacer en tu situación, por favor apela en los canales
+          de comunicación de la universidad.
         </Text>
       </Box>
     </Flex>

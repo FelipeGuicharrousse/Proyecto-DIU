@@ -20,10 +20,10 @@ function GoodResult() {
       <Box width="100%" textAlign="center" py={10} px={6}>
         <CheckCircleIcon boxSize={'50px'} color={'green.500'} />
         <Heading as="h2" size="xl" mt={6} mb={2}>
-            ¡Estas habilitado a postular a una beca!
+            ¡Estás habilitado a postular a una beca!
         </Heading>
         <Text color={'gray.500'}>
-            Puedes postular a las becas usando nuestros medios de comunicacion.
+            Puedes postular a las becas usando nuestros medios de comunicación.
         </Text>
       </Box>
     </Flex>

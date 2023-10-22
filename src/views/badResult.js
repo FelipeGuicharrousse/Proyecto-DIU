@@ -34,7 +34,7 @@ function BadResult() {
             Lamentablemente no puedes postular a una beca
         </Heading>
         <Text color={'gray.500'}>
-            No estas habilitado para obtener una beca
+            No estás habilitado para obtener una beca
         </Text>
         </Box>
     </Flex>
