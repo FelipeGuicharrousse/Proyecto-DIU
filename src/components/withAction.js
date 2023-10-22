@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Box,
   Flex,
@@ -7,9 +8,9 @@ import {
   useColorModeValue,
   HStack,
   Button,
-  Link,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import logo_usm from '../images/Logo_UTFSM.png'
 
 export default function WithAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -33,9 +34,9 @@ export default function WithAction() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-          <Link to="/health">
+          <Link to="/">
             <Box as="a"
-              backgroundImage="logo192.png"
+              backgroundImage={logo_usm}
               backgroundSize="cover"
               backgroundPosition="center"
               width="100px"
