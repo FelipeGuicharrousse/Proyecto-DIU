@@ -15,9 +15,6 @@ export default function NewsExample(){
                 style={{ textDecoration: 'underline' }}
                 >Volver a noticias</Link>
             </div>
-            <Heading>
-                Estudiante USM participa de campeonato internacional Goalball en Brasil
-            </Heading>
             <VStack paddingTop="40px" spacing="2" alignItems="flex-start">
         <Heading as="h2">Estudiante USM participa de campeonato internacional Goalball en Brasil</Heading>
         <Text as="p" fontSize="lg" >

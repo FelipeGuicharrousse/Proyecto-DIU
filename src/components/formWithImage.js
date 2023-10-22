@@ -46,7 +46,6 @@ export default function SplitScreen() {
                 align={'start'}
                 justify={'space-between'}>
                 <Checkbox>Recuérdame</Checkbox>
-                <Text color={'blue.500'}>¿Olvidaste la Contraseña?</Text>
               </Stack>
               <Button type="submit" colorScheme={'blue'} variant={'solid'}>
                 Ingresar

@@ -4,7 +4,6 @@ import './App.css';
 import Home from './views/home.js';
 import AboutUs from './views/aboutUs.js';
 import SignIn from './views/singIn';
-import Form from './views/form.js';
 import News from './views/news.js';
 import NewsExample from './views/news1.js';
 import Publications from './views/publications.js'
