@@ -12,6 +12,7 @@ import WithAction from './components/withAction.js';
 import GoodResult from './views/goodResult';
 import BadResult from './views/badResult';
 import UndefinedResult from './views/undefinedResult';
+import StudentList from './views/studentList.js';
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
             <Route path="/news" element={<News />} />
             <Route path="/news/example" element={<NewsExample />} />
             <Route path="/publications" element={<Publications />} />
-            
+            <Route path="/students" element={<StudentList />} />
           </Routes>
         </div>
       </div>
