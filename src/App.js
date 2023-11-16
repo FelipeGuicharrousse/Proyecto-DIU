@@ -15,6 +15,7 @@ import UndefinedResult from './views/undefinedResult';
 import SchedulesView from './views/schedulesView.js';
 import SignupCard from './views/formAdministration.js';
 import SplitScreen from './views/administration.js';
+import StudentList from './views/studentList.js';
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
             <Route path="/schedules" element={<SchedulesView />} />
             <Route path="/administration" element={<SignupCard />} />
             <Route path="/administrationHome" element={<SplitScreen />} />
-            
+            <Route path="/students" element={<StudentList />} />
           </Routes>
         </div>
       </div>
