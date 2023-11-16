@@ -51,7 +51,7 @@ export default function SplitScreen() {
               }}>
               Administrar Horario
             </Button>
-            <Button as={Link} to="/schedules" rounded={'full'}>Información de Postulantes</Button>
+            <Button as={Link} to="/students" rounded={'full'}>Información de Postulantes</Button>
           </Stack>
         </Stack>
       </Flex>
