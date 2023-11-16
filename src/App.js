@@ -12,6 +12,9 @@ import WithAction from './components/withAction.js';
 import GoodResult from './views/goodResult';
 import BadResult from './views/badResult';
 import UndefinedResult from './views/undefinedResult';
+import SchedulesView from './views/schedulesView.js';
+import SignupCard from './views/formAdministration.js';
+import SplitScreen from './views/administration.js';
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
             <Route path="/news" element={<News />} />
             <Route path="/news/example" element={<NewsExample />} />
             <Route path="/publications" element={<Publications />} />
+            <Route path="/schedules" element={<SchedulesView />} />
+            <Route path="/administration" element={<SignupCard />} />
+            <Route path="/administrationHome" element={<SplitScreen />} />
             
           </Routes>
         </div>

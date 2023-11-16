@@ -121,6 +121,21 @@ export default function WithAction() {
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={600}
+              color={'black'}
+              bg={'yellow.300'}
+              mr={2}
+              href={'/administration'}
+              _hover={{
+                bg: 'yellow.200',
+              }}>
+              Administración
+            </Button>
+
+            <Button
+              as={'a'}
+              display={{ base: 'none', md: 'inline-flex' }}
+              fontSize={'sm'}
+              fontWeight={600}
               color={'white'}
               bg={'pink.400'}
               href={'/sign-in'}
